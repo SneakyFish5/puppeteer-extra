@@ -38,12 +38,12 @@ puppeteer.launch({ headless: true }).then(async browser => {
 
   console.log(`Testing adblocker plugin..`)
   await page.goto('https://www.vanityfair.com')
-  await page.waitFor(1000)
+  await page.waitForTimeout(1000)
   await page.screenshot({ path: 'adblocker.png', fullPage: true })
 
   console.log(`Testing the stealth plugin..`)
   await page.goto('https://bot.sannysoft.com')
-  await page.waitFor(5000)
+  await page.waitForTimeout(5000)
   await page.screenshot({ path: 'stealth.png', fullPage: true })
 
   console.log(`All done, check the screenshots. ✨`)
